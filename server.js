@@ -24,7 +24,10 @@ cors_proxy.createServer({
   originBlacklist: originBlacklist,
   originWhitelist: originWhitelist,
   requireHeader: ['origin', 'x-requested-with'],
-  checkRateLimit: checkRateLimit,
+  corsMaxAge: 604800, //一週間分
+  setHeaders: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36'
+  },
   removeHeaders: [
     'cookie',
     'cookie2',
